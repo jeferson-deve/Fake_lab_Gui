@@ -1,0 +1,53 @@
+Common commands: (see '--help-commands' for more)
+
+  setup.py build      will build the package underneath 'build/'
+  setup.py install    will install the package
+
+Global options:
+  --verbose (-v)  run verbosely (default)
+  --quiet (-q)    run quietly (turns verbosity off)
+  --dry-run (-n)  don't actually do anything
+  --help (-h)     show detailed help message
+  --no-user-cfg   ignore pydistutils.cfg in your home directory
+
+Options for 'bdist_esky' command:
+  --dist-dir (-d)           directory to put final built distributions in
+  --freezer-module          module to use for freezing the application
+  --freezer-options         options to pass to the underlying freezer module
+  --bootstrap-module        module to use for bootstrapping the application
+  --bootstrap-code          code to use for bootstrapping the application
+  --compile-bootstrap-exes  whether to compile the bootstrapping exes with
+                            pypy
+  --bundle-msvcrt           whether to bundle MSVCRT as private assembly
+  --includes                list of modules to specifically include
+  --excludes                list of modules to specifically exclude
+  --dont-run-startup-hooks  don't force execution of esky.run_startup_hooks()
+  --pre-freeze-callback     function to call just before starting to freeze
+                            the app
+  --pre-zip-callback        function to call just before starting to zip up
+                            the app
+  --enable-appdata-dir      enable new 'appdata' directory layout (will go
+                            away after the 0.9.X series)
+
+Options for 'build' command:
+  --build-base (-b)  base directory for build library
+  --build-purelib    build directory for platform-neutral distributions
+  --build-platlib    build directory for platform-specific distributions
+  --build-lib        build directory for all distribution (defaults to either
+                     build-purelib or build-platlib
+  --build-scripts    build directory for scripts
+  --build-temp (-t)  temporary build directory
+  --plat-name (-p)   platform name to build for, if supported (default: win-
+                     amd64)
+  --compiler (-c)    specify the compiler type
+  --debug (-g)       compile extensions and libraries with debugging
+                     information
+  --force (-f)       forcibly build everything (ignore file timestamps)
+  --executable (-e)  specify final destination interpreter path (build.py)
+  --help-compiler    list available compilers
+
+usage: Fake_Lab.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: Fake_Lab.py --help [cmd1 cmd2 ...]
+   or: Fake_Lab.py --help-commands
+   or: Fake_Lab.py cmd --help
+
